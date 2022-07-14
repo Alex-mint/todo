@@ -124,6 +124,16 @@ input, select, textarea {
     background: transparent;
 }
 
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    var(--color-text-ph);
 }

@@ -26,50 +26,49 @@
             <div class="todo-wrapper">
 
                 <form class="order-form" @submit.prevent='createTask'>
-                    {% csrf_token %}
-<div class="todo-field">
-                    <ul class='todo-input'>
+                    <div class="todo-field">
+                        <ul class='todo-input'>
 
-                        <li>
-                            <input type="text" v-model='task.title' placeholder="New Item" required />
-                        </li>
-                    </ul>
+                            <li>
+                                <input type="text" v-model='task.title' placeholder="New Item" required />
+                            </li>
+                        </ul>
 
-                            <button class="btn" style="width: 150px;" type="submit">
-                                <img width='20' src="{% static 'images/plus.svg' %}" alt="" class="check">
-                            </button>
+                        <button class="btn" style="width: 150px;" type="submit">
+                            <img width='20' src="{% static 'images/plus.svg' %}" alt="" class="check">
+                        </button>
 
-                        
-                </div>
+
+                    </div>
                 </form>
+                <transition-group name="list">
+                    <div v-for='task in tasks' :key='task.id' class="todo-field">
+                        <div class="todo-info-wrapper">
 
-                <div 
-                    v-for='task in tasks' 
-                    :key='task.id'
-                    class="todo-field"
-                    >
-                    <div class="todo-info-wrapper">
+                            <div class="check-box">
+                                <img @click='completedTask(task)' v-show='task.completed' width='20'
+                                    src="{% static 'images/check.svg' %}" alt="" class="check">
+                                <img @click='completedTask(task)' v-show='!task.completed' width='20'
+                                    src="{% static 'images/no_check.svg' %}" alt="" class="check">
+                            </div>
 
-                        <div class="check-box">
-                            <img @click='completedTask(task)' v-show='task.completed' width='20' src="{% static 'images/check.svg' %}" alt="" class="check">
-                            <img @click='completedTask(task)' v-show='!task.completed' width='20' src="{% static 'images/no_check.svg' %}" alt="" class="check">
-                        </div>
-
-                        <div class="todo-info">
-                            <h2 @click='completedTask(task)' class="todo-h2" :class="{'completed': task.completed}">[[ task.title ]]</h2>
-                            <div class="todo-subinfo">
-                                <h3 class="todo-h3"></h3>
-                                <h4 class="todo-h4"></h4>
-                                <img src="" alt="" class="todo-view">
+                            <div class="todo-info">
+                                <h2 @click='completedTask(task)' class="todo-h2" :class="{'completed': task.completed}">
+                                    [[ task.title ]]</h2>
+                                <div class="todo-subinfo">
+                                    <h3 class="todo-h3"></h3>
+                                    <h4 class="todo-h4"></h4>
+                                    <img src="" alt="" class="todo-view">
+                                </div>
                             </div>
                         </div>
+                        <img @click='deleteTask(task)' src="{% static 'images/trash.svg' %}" alt="" class="todo-remove">
                     </div>
-                    <img @click='deleteTask(task)' src="{% static 'images/trash.svg' %}" alt="" class="todo-remove">
-                </div>
+                </transition-group>
             </div>
         </div>
     </section>
-    
+
     <script src="{% static 'js/home.js' %}"></script>
 </body>
 
