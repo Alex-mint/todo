@@ -1,0 +1,147 @@
+:root {
+    --color-text: #ece7e6;
+    --color-text-ph: #cbbdba;
+    --color-field: #6c7171;
+    --color-check:#f312c2;
+    --color-bg: #414b4b;
+}
+
+body {
+    background: var(--color-bg);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    height: 100%;
+    line-height: 1.5;
+    min-height: 100vh;
+    color: var(--color-text);
+    
+}
+
+
+
+.todo {
+}
+.container {
+    max-width: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.todo-h1 {
+    font-size: 20px;
+    font-family: 'GothamPro', serif;
+    color: var(--color-check);
+    font-weight: 700;
+    text-align: center;
+    margin: 15px 0;
+}
+.todo-wrapper {
+}
+
+.todo-input {
+    margin-left: 15px;
+    
+}
+
+.todo-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-field);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.todo-info-wrapper {
+    display: flex;
+    align-content: center;
+}
+.check-box {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    margin: 0 15px;
+}
+.check {
+}
+.todo-info {
+}
+.todo-h2 {
+    font-size: 18px;
+    font-family: 'GothamPro', serif;
+    color: var(--color-text);
+    font-weight: 500;
+}
+.todo-subinfo {
+    display: flex;
+}
+
+.btn {
+    text-align: right;
+    margin-right: 15px;
+}
+.todo-h3 {
+}
+.todo-h4 {
+}
+.todo-view {
+}
+.todo-remove {
+    margin: 0 15px;
+    width: 20px;
+    height: 20px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+*:focus {outline: none;}
+input, select, textarea {
+    color: var(--color-text)
+}
+
+.order-form ul {
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+
+.order-form li{
+    padding:12px;
+    position:relative;
+}
+
+.order-form input {
+    height:50px;
+    width:270px;
+    padding:5px 8px;
+    border-radius: 8px;
+    background: transparent;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    var(--color-text-ph);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    var(--color-text-ph);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    var(--color-text-ph);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    var(--color-text-ph);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    var(--color-text-ph);
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    var(--color-text-ph);
+}
